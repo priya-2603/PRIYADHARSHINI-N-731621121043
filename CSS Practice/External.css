@@ -1,0 +1,8 @@
+.myheading-2 {
+    border: 2px solid blueviolet;
+    text-align: center;
+    width: 50%;
+    color: blueviolet;
+    background-color:aquamarine;
+    cursor: pointer;
+}

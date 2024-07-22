@@ -1,0 +1,91 @@
+<html>
+
+<head>
+    <style>
+        body {
+            height: 100%;
+            font-family: Arial, sans-serif;
+            margin: 2;
+        }
+        .container {
+            align-content: center;
+            position: relative;
+            max-width: 300px;
+            padding: 16px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            -webkit-text-stroke: 1px lightblue;
+            margin-bottom: 20px;
+            font-family: cursive;
+            color: darkcyan;
+            cursor: pointer;
+        }
+
+        b {
+            color: powderblue;
+            font-size: 18px;
+            -webkit-text-stroke: 1px lightblue;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid skyblue;
+            box-sizing: border-box;
+        }
+
+        .button {
+            background-color: palevioletred;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            width: 80%;
+        }
+
+        .button:hover {
+            background-color: skyblue;
+        }
+       
+        .background {
+            background-image: url(web_developer.jpg.webp);
+            height: 500px;
+            width: 450px;
+            padding: 50px;
+            margin: auto;
+            max-width: 450%;
+            max-height: 50%;
+            }
+        
+    </style>
+</head>
+<center>
+<body>
+    <div class="background">
+          <form class="container">
+        
+            <img src="loginimage.jpg"width=70px height =70px>
+            <h1><i>LOGIN WINDOW</i></h1>
+            <input type="text" placeholder="Enter your username" 
+                   name="username"
+                required>
+
+            <input type="password" 
+                   placeholder="Enter your password"
+                name="password" required>
+                <input type="checkbox"p>Agree with <u>Terms & Conditions</u></p>
+
+            <button type="submit" class="button">Login</button>
+        </form>
+    </div>
+</body>
+</center>
+
+</html>
