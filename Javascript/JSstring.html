@@ -1,28 +1,55 @@
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>String Operations</title>
     <script>
-        var str = "Priya";
-        var length = str.length;
-        var char= str.charAt(3);
-        var value=str.slice(0,1);
-        var sub=str.substring(4);
-        var substr=str.substring(3);
-        var upper=str.toupperCase();
-        var lower=str.toUpperCase();
-        var concat=str.concat("BME");
-        var trim =str.trim(2);
-        var trimst=str.trimStart()
-        
+        function myFunction() {
+            // Get values from input fields
+            var str = document.getElementById("str").value;
+            var str1 = document.getElementById("str1").value;
+           
+            // Perform string operations
+            var a = str.length;
+            var b = str.charAt(1);
+            var c = str.slice(2, 5);
+            var d = str.substring(2);
+            var e = str.substr(2, 5);
+            var f = str.toUpperCase();
+            var g = str.toLowerCase();
+            var h = str.concat(str1);
+            var i = str.trim();
+            var j = str.trimStart();
+            var k = str.repeat(2);
+            var l = str.replace("string", "hello");
+            var m = str.replaceAll("string", "helloall");
+            var n = str.split("r");
 
-
-
-        document.getElementById()
+            // Prepare output string
+            var b1 = "Length: " + a + "<br>" +
+                     "Character at index 1: " + b + "<br>" +
+                     "Slice from index 2 to 5: " + c + "<br>" +
+                     "Substring from index 2: " + d + "<br>" +
+                     "Substring from index 2, length 5: " + e + "<br>" +
+                     "Uppercase: " + f + "<br>" +
+                     "Lowercase: " + g + "<br>" +
+                     "Concatenation with second string: " + h + "<br>" +
+                     "Trimmed: " + i + "<br>" +
+                     "Trimmed from start: " + j + "<br>" +
+                     "Repeated twice: " + k + "<br>" +
+                     "Replace 'string' with 'hello': " + l + "<br>" +
+                     "Replace all 'string' with 'helloall': " + m + "<br>" +
+                     "Split by 'r': " + n.join(", ");
+           
+            // Display output in the result div
+            document.getElementById("result").innerHTML = b1;
+        }
     </script>
 </head>
 <body>
-    
+    <h2>Enter Strings:</h2>
+    <input type="text" id="str" placeholder="Enter string...">
+    <input type="text" id="str1" placeholder="Enter second string...">
+    <button onclick="myFunction()">Perform String Operations</button>
+    <div id="result"></div>
 </body>
 </html>
