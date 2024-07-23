@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Web Page</title>
+        <script>
+          function prime(){
+            let n1 = parseInt(document.getElementById("n1").value);
+            let i=2,count=0;
+            while(i<=n1/2){
+                if(n1%i==0){
+                    count++;
+                }
+                i++;
+            }
+           
+            if(count==0){
+                document.write("<b>Prime</b>").innerHTML ="Prime";
+            }
+            else{
+                document.write("<b>Not a Prime</b>").innerHTML ="not a prime";
+            }
+          }
+        </script>
+    </head>
+<body>
+     Enter Number <input type="text" id="n1" value="Enter the number" onfocus="this.value=''" onblur="prime()"/>
+     </body>
+</html>
