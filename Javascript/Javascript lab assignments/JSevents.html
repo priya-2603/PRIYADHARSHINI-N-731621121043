@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS String</title>
+    <style>
+        
+    </style>
     <script>
-        function Hello(){
-           document.write("Welcome to JavaScript");
-        }
+        
         function fact(){
             let a=parseInt(document.getElementById("n").value);
             let fact=1;
@@ -17,18 +18,19 @@
             document.getElementById("ResultDiv").innerHTML=fact;
         }
         function Mouseover(){
-            alert("Welcome you");
+            alert("Welcome javascript factorial");
         }
 
 
     </script>
 </head>
-<body onload="window.alert('PAGE LOADED');">
-   <button onclick="Hello()">Click Me</button>
+<body onload="window.alert('Page loaded');">
+    
+   
    <br><br>
-   Enter your text<input type="text" id="n" value="Enter num" onfocus="this.value=' '" onblur="fact()">
+   Enter your text<input type="text" id="n" value="Enter the number" onfocus="this.value=' '" onblur="fact()">
    <br><br><br>
-    <p onmouseover="Mouseover()">Keep Cursor over Me</p>
+    <p onmouseover="Mouseover()">keep pointer on me</p>
    <div id="ResultDiv">
 
    </div>
