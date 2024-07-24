@@ -1,0 +1,143 @@
+
+<!DOCTYPE html> 
+<html> 
+
+<head> 
+	<title>JavaScript Calculator</title> 
+	
+	<style> 
+		table { 
+			border: 1px solid brown; 
+			margin-left: auto; 
+			margin-right: auto; 
+		} 
+
+		input[type="button"] { 
+			width: 100%; 
+			padding: 20px 40px; 
+			background-color:burlywood; 
+			color:brown; 
+			font-size: 24px; 
+			font-weight: bold; 
+			border: none; 
+			border-radius: 5px; 
+		} 
+
+		input[type="text"] { 
+			padding: 20px 30px; 
+			font-size: 24px; 
+			font-weight: bold; 
+			border: none; 
+			border-radius: 5px; 
+			border: 2px solid red; 
+		} 
+	</style> 
+</head> 
+	
+<body> 
+	
+	
+	<table id="calcu"> 
+		<tr> 
+			<td colspan="3"><input type="text" id="result"></td> 
+			<td><input type="button" value="c" onclick="clr()" /> </td> 
+		</tr> 
+		<tr> 
+			<td><input type="button" value="1" onclick="dis('1')"
+						onkeydown="myFunction(event)"> </td> 
+			<td><input type="button" value="2" onclick="dis('2')"
+						onkeydown="myFunction(event)"> </td> 
+			<td><input type="button" value="3" onclick="dis('3')"
+						onkeydown="myFunction(event)"> </td> 
+			<td><input type="button" value="/" onclick="dis('/')"
+						onkeydown="myFunction(event)"> </td> 
+		</tr> 
+		<tr> 
+			<td><input type="button" value="4" onclick="dis('4')"
+						onkeydown="myFunction(event)"> </td> 
+			<td><input type="button" value="5" onclick="dis('5')"
+						onkeydown="myFunction(event)"> </td> 
+			<td><input type="button" value="6" onclick="dis('6')"
+						onkeydown="myFunction(event)"> </td> 
+			<td><input type="button" value="*" onclick="dis('*')"
+						onkeydown="myFunction(event)"> </td> 
+		</tr> 
+		<tr> 
+			<td><input type="button" value="7" onclick="dis('7')"
+						onkeydown="myFunction(event)"> </td> 
+			<td><input type="button" value="8" onclick="dis('8')"
+						onkeydown="myFunction(event)"> </td> 
+			<td><input type="button" value="9" onclick="dis('9')"
+						onkeydown="myFunction(event)"> </td> 
+			<td><input type="button" value="-" onclick="dis('-')"
+						onkeydown="myFunction(event)"> </td> 
+		</tr> 
+		<tr> 
+			<td><input type="button" value="0" onclick="dis('0')"
+						onkeydown="myFunction(event)"> </td> 
+			<td><input type="button" value="." onclick="dis('.')"
+						onkeydown="myFunction(event)"> </td> 
+			
+	
+			<td><input type="button" value="=" onclick="solve()"> </td> 
+
+			<td><input type="button" value="+" onclick="dis('+')"
+						onkeydown="myFunction(event)"> </td> 
+		</tr> 
+	</table> 
+
+	<script> 
+		
+	
+		function dis(val) { 
+			document.getElementById("result").value += val 
+		} 
+
+		const myFunction = (event) => {
+    const { key } = event;
+    
+    
+};
+
+const myFunction1 = (event) => {
+    const { key } = event;
+    const result = document.getElementById("result");
+
+    if ((key >= '0' && key <= '9') || ['+', '-', '*', '/'].includes(key)) {
+        result.value += key;
+    } else if (key =='.' && !result.value.includes('.')) {
+        result.value += key;
+    } else if (key == 'Enter') {
+        solve();
+    }
+};
+
+const cal = document.getElementById("calcu");
+cal.onkeyup = (event) => {
+    if (event.keyCode === 13) {
+        console.log("Enter");
+        const x = document.getElementById("result").value;
+        console.log(x);
+        solve();
+    }
+};
+
+		function solve() { 
+			let expression = document.getElementById('result').value;
+            if (expression) {
+                try {
+                    let result = eval(expression);
+                    document.getElementById('result').value = result;
+                } catch (error) {
+                    document.getElementById('result').value = 'Error';
+                }
+            }
+		} 
+
+		function clr() { 
+			document.getElementById("result").value = "" 
+		} 
+	</script> 
+</body> 
+
+</html> 
