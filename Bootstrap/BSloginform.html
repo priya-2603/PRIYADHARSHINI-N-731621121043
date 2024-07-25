@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <style>
+    
+    .login-form {
+      width: 350px;
+      margin: 100px auto;
+      padding: 30px;
+      background:white;
+      border: 3px solid black;
+    }
+    .account{
+        text-align: right;
+    }
+   </style>
+</head>
+<body>
+    <div class="login-form">
+    <div>
+    <h2><button type="form" class=" btn btn-info"> Sign In</button></h2>
+    <div class="account">
+        <span><small><a href="#">Forgot Password?</a></small></span>
+    </div>
+    <form>
+      <div id="Username">
+        <i class="bi bi-person-circle"></i>
+        <input  type="email" class="form-control" placeholder="Username or Email" ><br>
+    </div>
+    <div id="password">
+      <i class="bi bi-envelope"></i>
+        <input type="password" class="form-control" placeholder="Password" required><br>
+    </div>
+      <div id="button">
+      <button type = "button" class ="btn btn-success">Login</button>
+      <button type="button" class="btn btn-info ">Login with Facebook</button>
+      <br><br>
+      <input type="checkbox"small> Remember me</small>
+      </form></div>
+<hr>
+    </form>
+    <div id="footer">
+      <small>Don't have an account? <a href="#">sign-up here</a></small>
+    </div>
+  </div>
+    
+    
+</body>
+</html>
