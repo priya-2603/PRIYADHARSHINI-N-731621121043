@@ -1,0 +1,44 @@
+
+    .header {
+  text-align: left;
+  background: maroon;
+  color: white;
+  padding: 10px;
+  top: 8px;
+  right: 16px;
+  font-size: 15px;
+ 
+}
+.right{
+  color: white;
+  position: absolute;
+   top: 8px;
+   right: 16px;
+  font-size: 13px;
+  word-spacing:6px
+}
+.head1 {
+  text-align: left;
+  font-size: large;
+  background-color: red;
+  color: white;
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+  font-family: bariol,;
+}
+.btn{
+  background-color: black;
+  color: white;
+}
+.categories {
+  background-color: beige;
+  color: grey;
+  align-items: left;
+  height: auto;
+  width: 250px;
+  margin-left: 15px;
+}
+.container {
+  position: relative;
+}
