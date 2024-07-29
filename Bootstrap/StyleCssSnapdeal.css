@@ -24,13 +24,34 @@
   color: white;
   padding: 40px;
   display: flex;
-  justify-content: space-between;
+
   font-family: bariol,;
+ }
+ .form-control{
+  width: 500px;
+  padding: 15px;
+  margin-top: 10px;
+  border: none;
 }
-.btn{
+ .btn {
+  margin-right: 10px;
+  width: 75px;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  height: 34px;
   background-color: black;
-  color: white;
-}
+ }
+ /*.sign {
+  margin-left: 10px;
+  width: 55px;
+  padding: 10px;
+  border: none;
+  height: 20px;
+
+ }*/
+ 
+
 .categories {
   background-color: beige;
   color: grey;
@@ -42,3 +63,17 @@
 .container {
   position: relative;
 }
+.mySlides{
+  width: 870px;
+  height: 800px;
+  position: absolute;
+  margin-left:240px;
+  top: -410px;
+}
+pre{
+  position: relative;
+  left: 45px; 
+  background-color: red;
+  border-color: red;
+}
+
