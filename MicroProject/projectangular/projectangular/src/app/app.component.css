@@ -10,12 +10,9 @@ header{
     padding: 10px 0;
     text-align: center;
 }
-
 nav{
     background-color:black;
-}
-
-nav ul {
+}nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -26,7 +23,6 @@ nav ul {
 nav ul li {
     margin: 0;
 }
-
 nav ul li a {
     display: block;
     padding: 10px 20px;
@@ -34,24 +30,19 @@ nav ul li a {
     text-decoration: none;
     text-align: center;
 }
-
 nav ul li a:hover {
     background-color: grey;
 }
-
 main {
     padding: 20px;
 }
-
 form {
     margin-bottom: 20px;
 }
-
 form label {
     display: block;
     margin: 10px 0 5px;
 }
-
 form input {
     width: 80%;
     padding: 8px;
@@ -60,38 +51,25 @@ form input {
 
 form button {
     padding: 10px 15px;
-    background-color: grey;
-    color:white;
+    margin: 2px;
+    color:black;
     border: none;
     cursor: pointer;
 }
-
 form button:hover {
     background-color: grey;
 }
-
 table {
     width: 90%;
     border-collapse: collapse;
 }
-
 table th, table td {
     border: 1px solid white;
     padding: 8px;
     text-align: left;
 }
-
 table th {
-    background-color:gray;
-    color: wheat;
+   background-color:gray ;
+    color: black;
 }
 
-footer {
-    background-color:grey;
-    color:white;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}

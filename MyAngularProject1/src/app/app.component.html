@@ -20,7 +20,7 @@
   Enter your first Name<input type="text" [(ngModel)]="fname"/>
   <br>
   welcome{{fname}}
-<br>!---->
+<br>
 <h1 [ngClass]="myClass">Strucutral and Attributes</h1>
 <br>
 <button (click) ="changeFlag()">show or Hide Div</button>
@@ -42,5 +42,20 @@
 <br>
 <button (click)="changeStyle()">change</button>
 </div>
+<table width="80%" align="center">
+  <tr>
+    <th><a a routerLink="home"> Home</a></th>
+    <th><a a routerLink="contact"> Contact</a></th>
+    <th><a a routerLink="about"> About</a></th>
+  </tr>
+</table>
+
+<div>
+  This the space for the new component.
+  <router-outlet></router-outlet>
+</div>!---->
+
+ 
+<app-child></app-child>
 
 

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library Management System</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="app.component.css">
 </head>
 <body>
     <header>
@@ -26,12 +26,16 @@
                 <input type="text" id="author" name="author" required>
                 <label for="isbn">ISBN:</label>
                 <input type="text" id="isbn" name="isbn" required><br>
-                <button type="submit">Add Book</button>
+                <button type="submit">Add </button>
+                <button type="submit">Update </button>
+                <button type="submit">Delete</button>
+                <button type="submit">Find</button>
+                <button type="submit">Find All</button>
             </form>
         </section>
         <section id="view-books">
             <h2>Available Books</h2>
-            <table>
+            <table border="1" width="50%">
                 <thead>
                     <tr>
                         <th>Title</th>
@@ -45,9 +49,7 @@
                     </tr>
 
                 </thead>
-                <tbody>
-                   
-                </tbody>
+            
             </table>
         </section>
     </main>
