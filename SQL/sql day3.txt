@@ -1,0 +1,339 @@
+SQL*Plus: Release 11.2.0.2.0 Production on Thu Aug 8 13:54:24 2024
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+SQL> connect system
+Enter password:
+Connected.
+SQL> create table_employee (eid number(4),ename varchar2(10),esalary number(6),DNO number(4));
+create table_employee (eid number(4),ename varchar2(10),esalary number(6),DNO number(4))
+       *
+ERROR at line 1:
+ORA-00901: invalid CREATE command
+
+
+SQL> create table tbl_employee (eid number(4),ename varchar2(10),esalary number(6),DNO number(4));
+
+Table created.
+
+SQL> insert into tbl_employee(101,'priya',2000,10);
+insert into tbl_employee(101,'priya',2000,10)
+                         *
+ERROR at line 1:
+ORA-00928: missing SELECT keyword
+
+
+SQL> insert into tbl_employee values(101,'priya',2000,10);
+
+1 row created.
+
+SQL> insert into tbl_employee values(102,'dhivya',3000,20);
+
+1 row created.
+
+SQL> insert into tbl_employee values(103,'agila',4000,30);
+
+1 row created.
+
+SQL> insert into tbl_employee values(104,'fathima',5000,40);
+
+1 row created.
+
+SQL> insert into tbl_employee values(105,'keerthi',6000,50);
+
+1 row created.
+
+SQL> insert into tbl_employee values(106,7000,60);
+insert into tbl_employee values(106,7000,60)
+            *
+ERROR at line 1:
+ORA-00947: not enough values
+
+
+SQL> insert into tbl_employee values(106,'',7000,60);
+
+1 row created.
+
+SQL> select * from tbl_employee;
+
+       EID ENAME         ESALARY        DNO
+---------- ---------- ---------- ----------
+       101 priya            2000         10
+       102 dhivya           3000         20
+       103 agila            4000         30
+       104 fathima          5000         40
+       105 keerthi          6000         50
+       106                  7000         60
+
+6 rows selected.
+
+SQL> insert into tbl_employee values(107,'nandhini',8000,60);
+
+1 row created.
+
+SQL> select * from tbl_employee;
+
+       EID ENAME         ESALARY        DNO
+---------- ---------- ---------- ----------
+       101 priya            2000         10
+       102 dhivya           3000         20
+       103 agila            4000         30
+       104 fathima          5000         40
+       105 keerthi          6000         50
+       106                  7000         60
+       107 nandhini         8000         60
+
+7 rows selected.
+
+SQL> select DNO,count(*) from tbl_employee group by dno;
+
+       DNO   COUNT(*)
+---------- ----------
+        30          1
+        20          1
+        40          1
+        50          1
+        10          1
+        60          2
+
+6 rows selected.
+
+SQL> select DNO,count(*),sum(esalary),avg(esalary),min(esalary),max(esalary) from tbl_employee group by DNO;
+
+       DNO   COUNT(*) SUM(ESALARY) AVG(ESALARY) MIN(ESALARY) MAX(ESALARY)
+---------- ---------- ------------ ------------ ------------ ------------
+        30          1         4000         4000       4000         4000
+        20          1         3000         3000       3000         3000
+        40          1         5000         5000       5000         5000
+        50          1         6000         6000       6000         6000
+        10          1         2000         2000       2000         2000
+        60          2        15000         7500       7000         8000
+
+6 rows selected.
+
+SQL> select DNO,count(*),sum(esalary),avg(esalary),min(esalary),max(esalary) from tbl_employee order by DNO;
+select DNO,count(*),sum(esalary),avg(esalary),min(esalary),max(esalary) from tbl_employee order by DNO
+       *
+ERROR at line 1:
+ORA-00937: not a single-group group function
+
+
+SQL> select DNO,count(*),sum(esalary),avg(esalary),min(esalary),max(esalary) from tbl_employee group by DNO order by DNO;
+
+       DNO   COUNT(*) SUM(ESALARY) AVG(ESALARY) MIN(ESALARY) MAX(ESALARY)
+---------- ---------- ------------ ------------ ------------ ------------
+        10          1         2000         2000         2000         2000
+        20          1         3000         3000         3000         3000
+        30          1         4000         4000         4000         4000
+        40          1         5000         5000         5000         5000
+        50          1         6000         6000         6000         6000
+        60          2        15000         7500         7000         8000
+
+6 rows selected.
+
+SQL> select DNO,count(*),sum(esalary),avg(esalary),min(esalary),max(esalary) from tbl_employee group by DNO having min(esalary) > 3000 order by DNO;
+
+       DNO   COUNT(*) SUM(ESALARY) AVG(ESALARY) MIN(ESALARY) MAX(ESALARY)
+---------- ---------- ------------ ------------ ------------ ------------
+        30          1         4000         4000       4000         4000
+        40          1         5000         5000       5000         5000
+        50          1         6000         6000       6000         6000
+        60          2        15000         7500       7000         8000
+
+SQL> select DNO,count(*),sum(esalary),avg(esalary),min(esalary),max(esalary) from tbl_employee group by DNO having min(esalary) > 1000 order by DNO;
+
+       DNO   COUNT(*) SUM(ESALARY) AVG(ESALARY) MIN(ESALARY) MAX(ESALARY)
+---------- ---------- ------------ ------------ ------------ ------------
+        10          1         2000         2000       2000         2000
+        20          1         3000         3000       3000         3000
+        30          1         4000         4000       4000         4000
+        40          1         5000         5000       5000         5000
+        50          1         6000         6000       6000         6000
+        60          2        15000         7500       7000         8000
+
+6 rows selected.
+
+SQL> select DNO,count(*),sum(esalary),avg(esalary),min(esalary),max(esalary) from tbl_employee group by DNO having min(esalary) < 1000 order by DNO;
+
+no rows selected
+
+SQL>
+---------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------
+SQL*Plus: Release 11.2.0.2.0 Production on Thu Aug 8 14:44:19 2024
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+SQL> connect system
+Enter password:
+Connected.
+SQL> create table tbl_student (reg_no number(5) primary key,
+  2  stu_name varchar2(20) not null,
+  3  stu_email varchar2(20) unique,
+  4  stu_age number (3) check(stu_age >0),
+  5  stu_location varchar2(15) default 'erode');
+
+Table created.
+
+SQL> insert into tbl_student values (43,'priya','priyanarayanan@gmail.com',19,'sirkali');
+insert into tbl_student values (43,'priya','priyanarayanan@gmail.com',19,'sirkali')
+                                           *
+ERROR at line 1:
+ORA-12899: value too large for column "SYSTEM"."TBL_STUDENT"."STU_EMAIL"
+(actual: 24, maximum: 20)
+
+
+SQL> insert into tbl_student values (43,'priya','priya@gmail.com',19,'sirkali');
+
+1 row created.
+
+SQL> select * from tbl_student;
+
+    REG_NO STU_NAME             STU_EMAIL               STU_AGE STU_LOCATION
+---------- -------------------- -------------------- ---------- ---------------
+        43 priya                priya@gmail.com              19 sirkali
+
+SQL> insert into tbl_student (reg_no,stu_name,stu_email,stu_age) values (501,'dhivya','dhivya@gmail.com',22);
+
+1 row created.
+
+SQL> select * from tbl_student;
+
+    REG_NO STU_NAME             STU_EMAIL               STU_AGE STU_LOCATION
+---------- -------------------- -------------------- ---------- ---------------
+        43 priya                priya@gmail.com              19 sirkali
+       501 dhivya               dhivya@gmail.com             22 erode
+
+SQL> insert into tbl_student values (-43,'priya','priya@gmail.com',19,'sirkali');
+insert into tbl_student values (-43,'priya','priya@gmail.com',19,'sirkali')
+*
+ERROR at line 1:
+ORA-00001: unique constraint (SYSTEM.SYS_C007000) violated
+
+
+SQL>
+---------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------
+SQL*Plus: Release 11.2.0.2.0 Production on Thu Aug 8 15:09:47 2024
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+SQL> connect system
+Enter password:
+Connected.
+SQL> create table department (dno number(5) primary key,dname varchar2(15));
+
+Table created.
+
+SQL> create table employee(eid number(5) primary key,ename varchar2(15),esalary number(5),dno number(5),foreign key (dno) references department(dno));
+
+Table created.
+
+SQL> insert into employee values(101,'priya',2000,10);
+insert into employee values(101,'priya',2000,10)
+*
+ERROR at line 1:
+ORA-02291: integrity constraint (SYSTEM.SYS_C007003) violated - parent key not
+found
+
+
+SQL> insert into department values(10,'BME');
+
+1 row created.
+
+SQL> insert into employee values(101,'priya',2000,10);
+
+1 row created.
+
+SQL> create view myview as select * from employee where dno =10;
+
+View created.
+
+SQL> select * from myview;
+
+       EID ENAME              ESALARY        DNO
+---------- --------------- ---------- ----------
+       101 priya                 2000         10
+
+SQL> insert into employee values(102,'dhivya',3000,10);
+
+1 row created.
+
+SQL> create view myview as select * from employee where dno =10;
+create view myview as select * from employee where dno =10
+            *
+ERROR at line 1:
+ORA-00955: name is already used by an existing object
+
+
+SQL> select * from myview;
+
+       EID ENAME              ESALARY        DNO
+---------- --------------- ---------- ----------
+       101 priya                 2000         10
+       102 dhivya                3000         10
+
+SQL> update myview set esalary=300 where eid=102;
+
+1 row updated.
+
+SQL> select * from myview;
+
+       EID ENAME              ESALARY        DNO
+---------- --------------- ---------- ----------
+       101 priya                 2000         10
+       102 dhivya                 300         10
+
+SQL> delete myview eid=102;
+delete myview eid=102
+                 *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended
+
+
+SQL> delete from myview eid=102;
+delete from myview eid=102
+                      *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended
+
+
+SQL> delete from myview where eid=102;
+
+1 row deleted.
+
+SQL> drop view myview;
+
+View dropped.
+
+SQL> select eid,ename from employee;
+
+       EID ENAME
+---------- ---------------
+       101 priya
+
+SQL> select eid as"Employee Id",ename "Employee Name" from employee;
+
+Employee Id Employee Name
+----------- ---------------
+        101 priya
+
+SQL> insert into employee values(103,'agila',4000,10);
+
+1 row created.
+
+SQL> select eid as"Employee Id",ename "Employee Name" from employee;
+
+Employee Id Employee Name
+----------- ---------------
+        101 priya
+        103 agila
+
+SQL>
+
+----------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------
+
+
+
+
