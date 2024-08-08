@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CalculatorService } from "./calculator.service";
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -22,7 +22,7 @@ export class AppComponent {
   //change(){
     //this.name ="priyanarayanan";
   //}
-  /*flag : boolean;
+  flag : boolean;
   vehicles : string[];
   selectedvehicle : string;
   myStyle :{};
@@ -49,14 +49,5 @@ export class AppComponent {
     this.myStyle = {'width' : '40%', 'border': '2px solid pink','border-radius' : '25px'} ;
   }
 
-  */
- Sum :number;
- Sub :number;
- constructor(private calc:CalculatorService){
-  this.Sum=calc.getAddition(10,29);
-  this.Sub=calc.getAddition(10,29)
- }
- 
-}
-
+  }
 
